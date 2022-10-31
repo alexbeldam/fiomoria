@@ -1,1 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Press+Start+2P&display=swap');
 
+body {
+    background-image: url(../img/background.jpg);
+    background-position: right top;
+    background-size: cover;
+    text-align: center;
+}
+
+body, * {
+    cursor: url(../img/cursor.cur), default;
+    margin: 0;
+}
+
+nav {
+    position: absolute;
+    left: calc(50% - 23em);
+    top: calc(50% - 3em);
+}
+
+h1 {
+    font-size: 90px;
+}
+
+h1:hover {
+    font-size: 96px;
+}
+
+h1, h2 {
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+h1:hover, h2:hover {
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+h2:hover {
+    font-size: 66px;
+}
+
+.colorido {
+    background: -webkit-linear-gradient(#FFF500, #FF5D02);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sumiu {
+    display: none;
+}
