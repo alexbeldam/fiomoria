@@ -36,10 +36,7 @@ h1, h2 {
     font-family: 'Press Start 2P', cursive;
     cursor: pointer;
     transition: all 1s ease;
-}
-
-h1:hover, h2:hover {
-    cursor: url(../img/maozinha.cur), pointer;
+    cursor: url(../img/shrelekt.ani);
 }
 
 h2 {
@@ -59,4 +56,5 @@ h2:hover {
 
 .kd {
     opacity: 0;
+    cursor: url(../img/cursor.cur), default;
 }
