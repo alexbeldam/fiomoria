@@ -16,10 +16,8 @@ body {
 nav {
     display: flex;
     position: relative;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
     text-align: center;
+    flex-direction: column;
     top: 21.7vw;
 }
 
@@ -32,11 +30,9 @@ h1:hover {
 }
 
 h1, h2 {
-    position: relative;
     font-family: 'Press Start 2P', cursive;
-    cursor: pointer;
+    cursor: url(../img/shrelekt.ani), pointer;
     transition: all 1s ease;
-    cursor: url(../img/shrelekt.ani);
 }
 
 h2 {
@@ -52,6 +48,7 @@ h2:hover {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #000;
 }
 
 .kd {
