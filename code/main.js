@@ -14,7 +14,8 @@ function buttonChange() {
 }
 
 firstButton.addEventListener('click', buttonChange);
-setTimeout(buttonChange, 10000);
 
 for (let i = 0; i < 3; i++)
     buttons[i].addEventListener('click', () => location.href = links[i]);
+
+setTimeout(buttonChange, 10000);
