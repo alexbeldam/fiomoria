@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Press+Start+2P&display=swap');
 
 body {
-    background-image: url(../img/background.jpg);
+    background-image: url(../img/sherekuda.jpg);
     background-position: right top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,9 +29,9 @@ h1:hover {
     font-size: 5.15vw;
 }
 
-h1, h2 {
+h1, h2, a {
     font-family: 'Press Start 2P', cursive;
-    cursor: url(../img/shrelekt.ani), pointer;
+    cursor: url(../img/maozinha.gif), auto;
     transition: all 1s ease;
 }
 
@@ -49,6 +49,7 @@ h2:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px #000;
+    text-decoration: none;
 }
 
 .kd {
