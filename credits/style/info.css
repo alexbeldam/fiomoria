@@ -1,0 +1,23 @@
+body {
+    background-image: url(../img/sherekuda.jpg);
+    background-size: cover;
+}
+
+article {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.493);
+    padding: 0.5vw 1vw;
+    border-radius: 4vw;
+    margin-bottom: 1vw;
+}
+
+section img {
+    border-radius: 50%;
+    transition: opacity 500ms;
+    width: 9.1vw;
+}
