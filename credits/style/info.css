@@ -3,21 +3,41 @@ body {
     background-size: cover;
 }
 
-article {
-    display: flex;
-    justify-content: space-evenly;
-    position: relative;
+h1 {
+    padding: 2vw 0;
 }
 
 section {
-    background-color: rgba(255, 255, 255, 0.493);
-    padding: 0.5vw 1vw;
-    border-radius: 4vw;
-    margin-bottom: 1vw;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    right: 4vw;
 }
 
-section img {
+figure img {
+    position: absolute;
     border-radius: 50%;
     transition: opacity 500ms;
     width: 9.1vw;
+    z-index: 2;
+}
+
+figure img:not([alt*="Foto"]) {
+    z-index: 1;
+}
+
+figure:hover img, figure img:not([alt*="Foto"]) {
+    opacity: 0;
+}
+
+figure:hover img:not([alt*="Foto"]) {
+    opacity: 1;
+}
+
+p {
+    margin: 11.1vw;
+    background-color: #ffffff7e;
+    text-align: justify;
+    padding: 1vw;
+    border-radius: 2vw;
 }
