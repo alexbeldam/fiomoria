@@ -8,7 +8,8 @@ const alternative = {
     alt: [
         'Fada madrinha',
         'Dragão',
-        'Fiona']
+        'Fiona'
+    ]
 };
 const original = {
     src: [
