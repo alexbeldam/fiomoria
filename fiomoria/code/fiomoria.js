@@ -1,4 +1,4 @@
-let cartas = document.querySelectorAll('.fiomória-carta');
+let cartas = document.querySelectorAll('.fiomoria-carta');
 let temCartaVirada = false;
 let bloqueio = false;
 let primeiraCarta, segundaCarta;
@@ -28,8 +28,8 @@ function viraCarta()
 
 function checar() 
 {
-    let éPar =  primeiraCarta.dataset.framework === segundaCarta.dataset.framework;
-    éPar ? desvira() : volta();
+    let par =  primeiraCarta.dataset.framework === segundaCarta.dataset.framework;
+    par ? desvira() : volta();
 }
 
 function desvira()
@@ -47,7 +47,7 @@ function volta()
         primeiraCarta.classList.remove('flip');
         segundaCarta.classList.remove('flip');
         reseta();
-    }, 1500);
+    }, 1000);
 }
 
 function reseta() 
