@@ -1,0 +1,68 @@
+body {
+    background-image: url(../img/sherekuda.jpg);
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+section {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+section > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(48, 74, 39, 0.89);
+    width: 355px;
+    height: 320px;
+    padding: 35px;
+    border-radius: 1vw;
+}
+
+section > div form {
+    display: flex;
+    flex-direction: column;
+}
+
+section > div input {
+    margin-top: 0.5vw;
+    background-color: rgb(71, 116, 57);
+    border: none;
+    outline: none;
+    height: 2.25vw;
+    border-radius: 0.5vw;
+    padding-left: 0.5vw;
+}
+
+section > div input::placeholder {
+    color: black;
+}
+
+#logo {
+    width: 4.8vw;
+}
+
+form [type="submit"] {
+    display: block;
+    background-color: rgb(109, 223, 75);
+    font-size: 1vw;
+    font-weight: bold;
+    cursor: url(../../../img/maozinha.gif), auto;
+}
+
+a {
+    color: rgb(109, 223, 75);
+    text-decoration: none;
+    cursor: url(../../../img/maozinha.gif), auto;
+}
+
+a:visited {
+    color: rgb(88, 167, 64);
+}
