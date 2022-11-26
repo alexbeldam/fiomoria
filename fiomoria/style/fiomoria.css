@@ -22,10 +22,8 @@ body {
 .frente, .verso {
     width: 100%;
     height: 100%;
-    padding: 20px;
     position: absolute;
-    border-radius: 5px;
-    background: #1c7ccc;
+    border-radius: 0.5vw;
     backface-visibility: hidden;
 }
 
@@ -52,4 +50,5 @@ body {
 
 .frente {
     transform: rotateY(180deg);
+    border: 4px rgb(48, 74, 39) solid;
 }
