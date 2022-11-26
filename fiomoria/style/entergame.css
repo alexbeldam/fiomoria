@@ -54,13 +54,13 @@ form [type="submit"] {
     background-color: rgb(109, 223, 75);
     font-size: 1vw;
     font-weight: bold;
-    cursor: url(../../../img/maozinha.gif), auto;
+    cursor: url(../../img/maozinha.gif), auto;
 }
 
 a {
     color: rgb(109, 223, 75);
     text-decoration: none;
-    cursor: url(../../../img/maozinha.gif), auto;
+    cursor: url(../../img/maozinha.gif), auto;
 }
 
 a:visited {
