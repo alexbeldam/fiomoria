@@ -1,6 +1,6 @@
 const firstButton = document.querySelector('h1');
 const buttons = document.querySelectorAll('h2');
-const links = ['fiomoria/login/', 'https://shrek.fandom.com/wiki/WikiShrek', 'credits/']; 
+const links = ['fiomoria/signup/', 'https://shrek.fandom.com/wiki/WikiShrek', 'credits/']; 
 
 function buttonChange() {
     firstButton.classList.add('kd');
