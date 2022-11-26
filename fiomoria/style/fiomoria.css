@@ -10,7 +10,7 @@ body {
     background: #060AB2;
 }
 
-.fiomória-game {
+.fiomoria-game {
     width: 640px;
     height: 640px;
     margin: auto;
@@ -29,7 +29,7 @@ body {
     backface-visibility: hidden;
 }
 
-.fiomória-carta {
+.fiomoria-carta {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     margin: 5px;
@@ -41,12 +41,12 @@ body {
     transition: transform .5s;
 }
 
-.fiomória-carta:active {
+.fiomoria-carta:active {
     transform: scale(0.97);
     transition: transform .2s;
 }
 
-.fiomória-carta.flip {
+.fiomoria-carta.flip {
     transform: rotateY(180deg);
 }
 
