@@ -9,11 +9,13 @@ body {
 }
 
 * {
-    cursor: url(../img/cursor.cur), default;
+    cursor: url(../../img/cursor.cur), default;
     margin: 0;
 }
 
 h1 {
+    position: relative;
+    right: 4vw;
     font-size: 4.8vw;
     padding: 2vw 0;
     font-family: 'Press Start 2P', cursive;
@@ -23,6 +25,11 @@ h1 {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px #000;
     text-decoration: none;
+}
+
+img[src*=home] {
+    width: 4.8vw;
+    cursor: url(../../img/maozinha.gif), auto;
 }
 
 section:not(#texto) {
