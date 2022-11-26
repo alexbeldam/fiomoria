@@ -1,3 +1,3 @@
-const title = document.querySelector('h1');
+const homeButton = document.querySelector('img[src*="home"]');
 
-title.addEventListener('click', () => location.href = '../');
+homeButton.addEventListener('click', () => location.href = '../');
