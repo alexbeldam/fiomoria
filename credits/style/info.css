@@ -1,13 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Press+Start+2P&display=swap');
+
 body {
     background-image: url(../img/sherekuda.jpg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+* {
+    cursor: url(../img/cursor.cur), default;
+    margin: 0;
 }
 
 h1 {
+    font-size: 4.8vw;
     padding: 2vw 0;
+    font-family: 'Press Start 2P', cursive;
+    background: -webkit-linear-gradient(#FFF500, #FF5D02);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #000;
+    text-decoration: none;
 }
 
-section {
+section:not(#texto) {
     display: flex;
     position: relative;
     justify-content: space-evenly;
@@ -34,10 +52,15 @@ figure:hover img:not([alt*="Foto"]) {
     opacity: 1;
 }
 
-p {
+#texto {
     margin: 11.1vw;
     background-color: #ffffff7e;
-    text-align: justify;
     padding: 1vw;
     border-radius: 2vw;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.4vw;
+    font-family: Arial, Helvetica, sans-serif;
 }
