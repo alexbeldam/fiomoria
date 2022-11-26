@@ -1,1 +1,6 @@
-
+body {
+    background-image: url(../img/sherekuda.jpg);
+    background-position: top right;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
