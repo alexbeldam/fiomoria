@@ -20,10 +20,15 @@ section>div {
     align-items: center;
     justify-content: center;
     background-color: rgba(48, 74, 39, 0.89);
-    width: 20vw;
-    height: 20vw;
+    width: 17.75vw;
+    height: 16vw;
     padding: 2vw;
     border-radius: 1vw;
+}
+
+section#signup > div {
+    width: 20vw;
+    height: 20vw;
 }
 
 section>div form {
@@ -137,4 +142,8 @@ ul {
 
 .avatars input:checked + label {
     outline: 0.25vw solid rgb(88, 167, 64);
+}
+
+.echo {
+    
 }

@@ -1,3 +1,9 @@
+<?php
+
+include('code/protect.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -132,6 +138,7 @@
             <img class="verso" src="img/verso.jpeg" alt="verso da carta">
         </div>
     </section>
+    
     <script src="code/fiomoria.js"></script>
 </body>
 </html>
