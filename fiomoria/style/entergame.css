@@ -14,24 +14,24 @@ section {
     align-items: center;
 }
 
-section > div {
+section>div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgba(48, 74, 39, 0.89);
-    width: 355px;
-    height: 320px;
-    padding: 35px;
+    width: 20vw;
+    height: 20vw;
+    padding: 2vw;
     border-radius: 1vw;
 }
 
-section > div form {
+section>div form {
     display: flex;
     flex-direction: column;
 }
 
-section > div input {
+section>div input {
     margin-top: 0.5vw;
     background-color: rgb(71, 116, 57);
     border: none;
@@ -41,7 +41,7 @@ section > div input {
     padding-left: 0.5vw;
 }
 
-section > div input::placeholder {
+section>div input::placeholder {
     color: black;
 }
 
@@ -65,4 +65,72 @@ a {
 
 a:visited {
     color: rgb(88, 167, 64);
+}
+
+#avatar {
+    text-align: center;
+    padding-top: 1vw;
+}
+
+ul {
+    display: flex;
+}
+
+.avatars {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.avatars:after {
+    content: "";
+    clear: both;
+}
+
+.avatar {
+    box-sizing: border-box;
+    float: left;
+    height: 4vw;
+    width: 4vw;
+    position: relative;
+    margin-top: 1vw;
+}
+
+.avatar+.avatar {
+    margin-left: 1.25vw;
+}
+
+.avatar label {
+    background: #fff no-repeat center center;
+    border-radius: 50%;
+    bottom: 1px;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    left: 1px;
+    position: absolute;
+    right: 1px;
+    text-indent: 100%;
+    top: 1px;
+    white-space: nowrap;
+}
+
+.fiona label {
+    background-image: url(../img/avatar1.jpg);
+    background-size: cover;
+}
+
+.shrek label {
+    background-image: url(../img/avatar2.jpg);
+    background-size: cover;
+}
+
+.burro label {
+    background-image: url(../img/avatar3.jpg);
+    background-size: cover;
+}
+
+.gato label {
+    background-image: url(../img/avatar4.jpg);
+    background-size: cover;
 }

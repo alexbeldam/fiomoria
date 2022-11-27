@@ -16,8 +16,34 @@
             </div>
 
             <form method="post" action="code/signup.php">
-                <input type="text" name="user" placeholder="Nome de Usuário" autofocus>
-                <input type="password" name="senha" placeholder="Sua Senha">
+                <input type="text" name="user" placeholder="Nome de Usuário" required autofocus>
+
+                <label id="avatar">
+                    Seu Avatar:
+                    <ul class="avatars">
+                            <li class="avatar fiona">
+                                <input type="radio" name="avatars" value="1" id="fiona">
+                                <label for="fiona">Fiona</label>
+                            </li>
+                            
+                            <li class="avatar shrek">
+                                <input type="radio" name="avatars" value="2" id="shrek">
+                                <label for="shrek">Shrek</label>
+                            </li>
+                            
+                            <li class="avatar burro">
+                                <input type="radio" name="avatars" value="3" id="burro">
+                                <label for="burro">Burro</label>
+                            </li>
+                            
+                            <li class="avatar gato">
+                                <input type="radio" name="avatars" value="4" id="gato">
+                                <label for="gato">Gato de Botas</label>
+                            </li>
+                    </ul>
+                </label>
+
+                <input type="password" name="senha" placeholder="Sua Senha" required>
                 <input type="submit" value="CADASTRAR">
             </form>
 
