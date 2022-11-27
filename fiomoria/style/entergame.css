@@ -134,3 +134,7 @@ ul {
     background-image: url(../img/avatar4.jpg);
     background-size: cover;
 }
+
+.avatars input:checked + label {
+    outline: 0.25vw solid rgb(88, 167, 64);
+}
