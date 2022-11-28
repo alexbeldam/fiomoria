@@ -13,6 +13,7 @@ body {
     background-image: url(../img/sherekuda.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 header {
@@ -59,8 +60,8 @@ header li a {
 }
 
 .fiomoria-game {
-    width: 46vw;
-    height: 46vw;
+    width: 41.74vw;
+    height: 41.74vw;
     margin: 4.26vw auto auto;
     display: flex;
     flex-wrap: wrap;
