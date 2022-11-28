@@ -32,12 +32,12 @@ section#signup > div {
     height: 24vw;
 }
 
-section>div form {
+section>div form, section>div div:last-of-type {
     display: flex;
     flex-direction: column;
 }
 
-section>div input {
+section>div input, button {
     margin-top: 0.5vw;
     background-color: rgb(71, 116, 57);
     border: none;
@@ -55,7 +55,7 @@ section>div input::placeholder {
     width: 4.8vw;
 }
 
-form [type="submit"] {
+form [type="submit"], button {
     display: block;
     background-color: rgb(109, 223, 75);
     font-size: 1vw;
@@ -143,4 +143,8 @@ ul {
 
 .avatars input:checked + label {
     outline: 0.25vw solid rgb(88, 167, 64);
+}
+
+p {
+    text-align: center;
 }
