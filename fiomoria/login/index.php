@@ -51,7 +51,7 @@ if (isset($_POST['user'])) {
                 <input type="submit" value="ENTRAR">
             </form>
 
-            <p>Ainda não tem cadastro? <a href="../signup/">Cadastrar-se</a></p>
+            <p>Ainda não tem cadastro? <a href="../signup/">Cadastre-se</a></p>
         </div>
     </section>
 </body>

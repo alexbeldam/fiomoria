@@ -4,6 +4,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25vw;
     overflow: hidden;
 }
 
@@ -20,7 +21,7 @@ section>div {
     align-items: center;
     justify-content: center;
     background-color: rgba(48, 74, 39, 0.89);
-    width: 17.75vw;
+    width: 21.25vw;
     height: 16vw;
     padding: 2vw;
     border-radius: 1vw;
@@ -28,7 +29,7 @@ section>div {
 
 section#signup > div {
     width: 20vw;
-    height: 20vw;
+    height: 24vw;
 }
 
 section>div form {
@@ -108,15 +109,15 @@ ul {
 .avatar label {
     background: #fff no-repeat center center;
     border-radius: 50%;
-    bottom: 1px;
+    bottom: 0.07vw;
     cursor: pointer;
     display: block;
     font-size: 0;
-    left: 1px;
+    left: 0.07vw;
     position: absolute;
-    right: 1px;
+    right: 0.07vw;
     text-indent: 100%;
-    top: 1px;
+    top: 0.07vw;
     white-space: nowrap;
 }
 
@@ -142,8 +143,4 @@ ul {
 
 .avatars input:checked + label {
     outline: 0.25vw solid rgb(88, 167, 64);
-}
-
-.echo {
-    
 }
