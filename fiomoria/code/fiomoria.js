@@ -18,14 +18,16 @@ const characters = [
 let first = '';
 let second = '';
 
-function novoElemento (tag, classe) {
+function novoElemento (tag, classe) 
+{
     const el = document.createElement(tag);
     el.className = classe;
 
     return el;
 }
 
-function criaCarta(character) {
+function criaCarta(character) 
+{
     const carta = novoElemento('figure', 'fiomoria-carta');
     const frente = novoElemento('figure', 'face frente');
     const verso = novoElemento('figure', 'face verso');
@@ -41,7 +43,8 @@ function criaCarta(character) {
     return carta
 }
 
-function close() {
+function close() 
+{
     first.removeEventListener('click', e => flip(e));
     second.removeEventListener('click', e => flip(e));
     const firstFrente = first.firstChild;
@@ -54,7 +57,8 @@ function close() {
     second = '';
 }
 
-function unflip() {
+function unflip() 
+{
     setTimeout(() => {
         first.classList.remove('flip');
         second.classList.remove('flip');
@@ -64,13 +68,15 @@ function unflip() {
     }, 1000)
 }
 
-function checar() {
+function checar() 
+{
     par = first.getAttribute('data-character') === second.getAttribute('data-character');
 
     par ? close() : unflip();
 }
 
-function flip(evt) {
+function flip(evt) 
+{
     const target = evt.target;
     const carta = target.parentNode;
 
@@ -89,7 +95,8 @@ function flip(evt) {
     }
 }
 
-function embaralhar() {
+function embaralhar() 
+{
     const cartas = document.querySelectorAll('.fiomoria-carta');
 
     cartas.forEach(carta => {
@@ -98,7 +105,8 @@ function embaralhar() {
     });
 }
 
-function load(dificuldade) {
+function load(dificuldade) 
+{
     const duplicateCharacters = [...characters, ...characters];
 
     duplicateCharacters.forEach(character => {
@@ -121,3 +129,14 @@ play.addEventListener('click', () => {
     else 
         load(select.value);
 });
+
+function checarVitoria()
+{
+    const cartasViradas = document.querySelectorAll('.disabled');
+
+    if(cartasViradas.length === 24)
+    {
+        clearInterval(this.loop);
+        alert(`Parabéns, <?php echo $_SESSION['user'] ?>! Você conseguiu! seu tempo foi:`);
+    }
+}
