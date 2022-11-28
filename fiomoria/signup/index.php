@@ -17,7 +17,7 @@
                 <img src="../img/icon.png" id="logo">
             </div>
 
-            <div>
+            <form method="post" action="">
                 <input type="text" name="user" placeholder="Nome de Usuário" minlength="5" maxlength="32" required autofocus>
 
                 <label id="avatar">
@@ -46,15 +46,41 @@
                 </label>
 
                 <input type="password" name="senha" placeholder="Sua Senha" minlength="5" maxlength="16" required>
-                <button>CADASTRAR</button>
-            <div>
+                <input type="submit" value="CADASTRAR">
+            </form>
 
             <p>Já tem cadastro? <a href="../login/">Logar</a></p>
         </div>
     </section>
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="code/submit.js"></script>
 </body>
 
 </html>
+
+<?php
+
+if (isset($_POST['user'])) {
+    include('../code/conect.php');
+
+    $user = $mysqli->real_escape_string($_POST['user']);
+    $senha = $mysqli->real_escape_string($_POST['senha']);
+    $hash = password_hash($senha, PASSWORD_DEFAULT);
+    $avatar = $_POST['avatars'];
+
+    $sql_code = "SELECT * FROM usuarios WHERE user = '$user'";
+    $sql_query = $mysqli->query($sql_code);
+
+    if (!($sql_query->num_rows)) {
+        $mysqli->query("INSERT INTO usuarios (user, senha, avatar) VALUES('$user', '$hash', '$avatar')");
+
+        header("location: ../login");
+    }
+    else {
+        $script_open = "<script>";
+        $script_var = "const user = document.querySelector('input[name=\"user\"]');";
+        $script_style = "user.style.border = \"1px red solid\";";
+        $script_code = "window.addEventListener('click', () => user.style.border = \"0\");";
+        $script_close = "</script>";
+
+        echo $script_open . $script_var . $script_style . $script_code . $script_close;
+    }
+}

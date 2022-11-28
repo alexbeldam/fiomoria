@@ -1,33 +1,3 @@
-<?php
-
-if (isset($_POST['user'])) {
-    include('../code/conect.php');
-    
-    $user = $mysqli->real_escape_string($_POST['user']);
-    $senha = $mysqli->real_escape_string($_POST['senha']);
-    
-    $sql_code = "SELECT * FROM usuarios WHERE user = '$user'";
-    $sql_query = $mysqli->query($sql_code);
-
-    if (!($sql_query->num_rows)) 
-        header("location: ../signup");
-    else {
-        $usuario = $sql_query->fetch_assoc();
-
-        if(password_verify($senha, $usuario['senha'])) {
-            if (!isset($_SESSION))
-                session_start();
-
-            $_SESSION['user'] = $usuario['user'];
-            $_SESSION['record'] = $usuario['record'];
-
-            header("location: ../");
-        }
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -56,3 +26,40 @@ if (isset($_POST['user'])) {
     </section>
 </body>
 </html>
+
+<?php
+
+if (isset($_POST['user'])) {
+    include('../code/conect.php');
+    
+    $user = $mysqli->real_escape_string($_POST['user']);
+    $senha = $mysqli->real_escape_string($_POST['senha']);
+    
+    $sql_code = "SELECT * FROM usuarios WHERE user = '$user'";
+    $sql_query = $mysqli->query($sql_code);
+
+    if (!($sql_query->num_rows)) 
+        header("location: ../signup");
+    else {
+        $usuario = $sql_query->fetch_assoc();
+
+        if (password_verify($senha, $usuario['senha'])) {
+            if (!isset($_SESSION))
+                session_start();
+
+            $_SESSION['user'] = $usuario['user'];
+            $_SESSION['record'] = $usuario['record'];
+
+            header("location: ../");
+        }
+        else {
+            $script_open = "<script>";
+            $script_var = "const senha = document.querySelector('input[name=\"senha\"]');";
+            $script_style = "senha.style.border = \"1px red solid\";";
+            $script_code = "window.addEventListener('click', () => senha.style.border = \"0\");";
+            $script_close = "</script>";
+
+            echo $script_open . $script_var . $script_style . $script_code . $script_close;
+        }
+    }
+}
