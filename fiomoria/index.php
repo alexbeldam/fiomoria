@@ -1,6 +1,7 @@
 <?php
 
 include('code/protect.php');
+include('code/rank.php');
 
 ?>
 
