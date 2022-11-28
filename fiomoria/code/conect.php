@@ -3,7 +3,7 @@
 $host = 'localhost';
 $usuario = 'root';
 $senha = '';
-$database = 'xreq-login';
+$database = 'login';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 
