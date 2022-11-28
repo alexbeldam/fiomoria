@@ -74,13 +74,6 @@ if (isset($_POST['user'])) {
 
         header("location: ../login");
     }
-    else {
-        $script_open = "<script>";
-        $script_var = "const user = document.querySelector('input[name=\"user\"]');";
-        $script_style = "user.style.border = \"1px red solid\";";
-        $script_code = "window.addEventListener('click', () => user.style.border = \"0\");";
-        $script_close = "</script>";
-
-        echo $script_open . $script_var . $script_style . $script_code . $script_close;
-    }
+    else 
+        echo "<script src=\"code/input.js\"></script>";
 }

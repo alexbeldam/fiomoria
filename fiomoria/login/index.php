@@ -52,14 +52,7 @@ if (isset($_POST['user'])) {
 
             header("location: ../");
         }
-        else {
-            $script_open = "<script>";
-            $script_var = "const senha = document.querySelector('input[name=\"senha\"]');";
-            $script_style = "senha.style.border = \"1px red solid\";";
-            $script_code = "window.addEventListener('click', () => senha.style.border = \"0\");";
-            $script_close = "</script>";
-
-            echo $script_open . $script_var . $script_style . $script_code . $script_close;
-        }
+        else 
+            echo "<script src=\"code/input.js\"></script>";
     }
 }
