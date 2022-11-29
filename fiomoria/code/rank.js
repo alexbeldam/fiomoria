@@ -18,4 +18,16 @@ function carrega_rank() {
     rank.classList.remove('sumiu');
 }
 
-play.addEventListener('click', carrega_rank);
+play.addEventListener('click', () => {
+        if (select.value === '') {
+            select.classList.add('tryagain');
+    
+            setTimeout(() => select.classList.remove('tryagain'), 1500);
+    
+            return;
+        }
+        else {
+            load(select.value);
+            carrega_rank();
+        }
+});
