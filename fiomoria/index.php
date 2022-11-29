@@ -39,7 +39,7 @@ include('code/rank.php');
             <li onclick="location.href = '../'">
                 <p>Início</p>
             </li>
-            <li onclick="location.href = 'code/logout'">
+            <li onclick="location.href = 'code/logout.php'">
                 <p>Deslogar</p>
             </li>
         </ul>
