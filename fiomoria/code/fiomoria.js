@@ -15,6 +15,15 @@ const characters = [
     'shrek',
     'shrekHumano'
 ];
+const timer = document.querySelector(".timer");
+const countDown = [
+    90,
+    60,
+    30,
+    5
+];
+let rec;
+let pares;
 let first = '';
 let second = '';
 
@@ -43,6 +52,28 @@ function criaCarta(character)
     return carta
 }
 
+function endGame(won) {
+    if (won) {
+        $.ajax({
+            url: 'code/record.php',
+            method: 'POST',
+            data: {
+                record: rec
+            }
+        }).done(result => {
+            if (result)
+                window.alert('Parabéns, novo record!');
+            else
+                window.alert('Você ganhou!')
+        });
+    }
+    else {
+        cartas = document.querySelectorAll('.fiomoria-carta');
+        cartas.forEach(carta => carta.removeEventListener('click', e => flip(e)));
+        window.alert('Seu tempo acabou, você perdeu');
+    }
+}
+
 function close() 
 {
     first.removeEventListener('click', e => flip(e));
@@ -53,8 +84,13 @@ function close()
     firstFrente.classList.add('disabled');
     secondFrente.classList.add('disabled');
 
+    pares++;
+
     first = '';
     second = '';
+
+    if(pares == 12)
+        endGame(1);
 }
 
 function unflip() 
@@ -105,9 +141,15 @@ function embaralhar()
     });
 }
 
+function time(countDown) {
+
+    endGame(0);
+}
+
 function load(dificuldade) 
 {
     const duplicateCharacters = [...characters, ...characters];
+    rec = pares = 0;
 
     duplicateCharacters.forEach(character => {
         const carta = criaCarta(character);
@@ -116,16 +158,9 @@ function load(dificuldade)
     })
     
     embaralhar();
+
+    if (dificuldade === 0)
+        timer.innerHTML = "Sem tempo";
+    else
+        time(countDown[dificuldade - 1]);
 }
-
-play.addEventListener('click', () => {
-    if (select.value === '') {
-        select.classList.add('tryagain');
-
-        setTimeout(() => select.classList.remove('tryagain'), 1500);
-
-        return;
-    }
-    else 
-        load(select.value);
-});
