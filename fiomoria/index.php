@@ -26,11 +26,11 @@ include('code/rank.php');
             <li>
                 <select name="game-mode">
                     <option value="" disabled selected>Selecione o modo de jogo</option>
-                    <option value="0">Facílimo</option>
-                    <option value="1">Fácil</option>
-                    <option value="2">Médio</option>
-                    <option value="3">Difícil</option>
-                    <option value="4">Se coloca no lugar dela</option>
+                    <option value="0">Facílimo (sem tempo irmão)</option>
+                    <option value="1">Fácil (1min 30s)</option>
+                    <option value="2">Médio (1min)</option>
+                    <option value="3">Difícil (30s)</option>
+                    <option value="4">Se coloca no lugar dela cinco segundos 🤚</option>
                 </select>
             </li>
             <li>
@@ -104,6 +104,7 @@ include('code/rank.php');
         </ul>
     </section>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="code/fiomoria.js"></script>
     <script src="code/rank.js"></script>
 </body>
