@@ -63,3 +63,60 @@ header li p {
 .tryagain {
     outline: 1px red solid;
 }
+
+.rank {
+    position: absolute;
+    left: 1vw;
+    top: 4.26vw;
+    text-align: center;
+    background-color: rgba(48, 74, 39, 0.89);
+    color: white;
+    border-radius: 2vw;
+    padding: 1vw;
+    box-sizing: border-box;
+    width: 23%;
+}
+
+.rank *:not(li ul li img) {
+    padding-bottom: 1vw;
+}
+
+.rank ul {
+    list-style: none;
+}
+
+li ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    height: 5vw;
+    width: 100%;
+    gap: 0.78vw;
+}
+
+li ul li {
+    aspect-ratio: 1/1;
+    height: 100%;
+}
+
+li ul li img {
+    aspect-ratio: 1/1;
+    width: 70%;
+    border-radius: 50%;
+
+}
+
+.yrecord {
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+.center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sumiu {
+    display: none;
+}

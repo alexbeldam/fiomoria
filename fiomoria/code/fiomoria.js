@@ -106,7 +106,7 @@ function load(dificuldade) {
 
         carta.addEventListener('click', flip);
     })
-
+    
     embaralhar();
 }
 
