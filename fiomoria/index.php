@@ -49,7 +49,7 @@ include('code/rank.php');
 
     <section class="rank sumiu">
         <h1>Seu tempo:</h1>
-        <input type="time" disabled>
+        <p class="time"></p>
         <h1>Seu record:</h1>
         <p class="yrecord">
             <?php if ($_SESSION['record'] === 'NULL')
