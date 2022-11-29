@@ -52,7 +52,7 @@ include('code/rank.php');
         <p class="time"></p>
         <h1>Seu record:</h1>
         <p class="yrecord">
-            <?php if ($_SESSION['record'] === 'NULL')
+            <?php if (is_null($_SESSION['record']))
             echo 'nenhum';
         else
             echo $_SESSION['record'] . 's' ?>
