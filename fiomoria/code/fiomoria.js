@@ -15,7 +15,7 @@ const characters = [
     'shrek',
     'shrekHumano'
 ];
-const timer = document.querySelector(".timer");
+const timer = document.querySelector(".time");
 const countDown = [
     90,
     60,
@@ -24,6 +24,7 @@ const countDown = [
 ];
 let rec;
 let pares;
+let jogo;
 let first = '';
 let second = '';
 
@@ -52,6 +53,15 @@ function criaCarta(character)
     return carta
 }
 
+function timeSet(countDown) {
+    setTimeout(() => timeSet(countDown), 1000);
+
+    if (countDown >= 0) {
+        timer.innerHTML = countDown + 's';
+        countDown--;
+    }
+}
+
 function endGame(won) {
     if (won) {
         $.ajax({
@@ -64,14 +74,15 @@ function endGame(won) {
             if (result)
                 window.alert('Parabéns, novo record!');
             else
-                window.alert('Você ganhou!')
+                window.alert('Parabéns você venceu');
         });
     }
     else {
         cartas = document.querySelectorAll('.fiomoria-carta');
-        cartas.forEach(carta => carta.removeEventListener('click', e => flip(e)));
-        window.alert('Seu tempo acabou, você perdeu');
+        cartas.forEach(carta => carta.classList.add('flip'));
     }
+
+    jogo = 0;
 }
 
 function close() 
@@ -142,14 +153,15 @@ function embaralhar()
 }
 
 function time(countDown) {
-
-    endGame(0);
+    setTimeout(() => endGame(0), countDown * 1000);
+    timeSet(countDown);
 }
 
 function load(dificuldade) 
 {
     const duplicateCharacters = [...characters, ...characters];
     rec = pares = 0;
+    jogo = 1;
 
     duplicateCharacters.forEach(character => {
         const carta = criaCarta(character);
@@ -159,8 +171,10 @@ function load(dificuldade)
     
     embaralhar();
 
-    if (dificuldade === 0)
+    if (dificuldade == 0)
         timer.innerHTML = "Sem tempo";
-    else
+    else {
+        timer.innerHTML = countDown[dificuldade - 1] + 's';
         time(countDown[dificuldade - 1]);
+    }
 }
