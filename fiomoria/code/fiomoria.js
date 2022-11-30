@@ -55,41 +55,33 @@ function criaCarta(character)
     return carta
 }
 
-function timeSet(countDown) {
-    intervalId = setInterval(() => {
-        if (countDown == 0) {
-            clearInterval(intervalId);
-            return;
-        }
-
-        countDown--;
-        rec++;
-
-        timer.innerHTML = countDown + 's';
-    }, 1000);
-}
-
 function endGame(won) {
+    clearInterval(intervalId);
+
     if (won) {
         clearTimeout(timeoutId);
-        clearInterval(intervalId);
 
-        $.ajax({
-            url: 'code/record.php',
-            method: 'POST',
-            data: {
-                record: rec
-            }
-        }).done(result => {
-            if (result)
-                timer.innerHTML = 'Parabéns, novo record';
-            else
-                timer.innerHTML = 'Parabéns, você Ganhou';
-        });
+        if (rec === '') 
+            timer.innerHTML = 'Parabéns, você Ganhou';
+        else
+            $.ajax({
+                url: 'code/record.php',
+                method: 'POST',
+                data: {
+                    record: rec
+                }
+            }).done(result => {
+                if (result)
+                    timer.innerHTML = 'Parabéns, novo record';
+                else
+                    timer.innerHTML = 'Parabéns, você Ganhou';
+            });
     }
     else {
-        cartas = document.querySelectorAll('.fiomoria-carta:not(.flip)');
+        const cartas = document.querySelectorAll('.fiomoria-carta:not(.flip)');
         cartas.forEach(carta => carta.classList.add('flip'));
+
+        timer.innerHTML = 'Você perdeu';
     }
 }
 
@@ -160,17 +152,41 @@ function embaralhar()
     });
 }
 
-function time(countDown) {
-    timeoutId = setTimeout(() => endGame(0), countDown * 1000);
+function timeSet(countDown) {
+    rec = 0;
 
-    timeSet(countDown);
+    if (countDown > 60) {
+        let segundos = countDown - 60;
+
+        timer.innerHTML = '1min ' + segundos + 's';
+    }
+    else if (countDown == 60)
+        timer.innerHTML = '1min';
+    else 
+        timer.innerHTML = countDown + 's';
+
+    intervalId = setInterval(() => {
+        countDown--;
+        rec++;
+        
+        if (countDown > 60) {
+            let segundos = countDown - 60;
+
+            timer.innerHTML = '1min ' + segundos + 's';
+        }
+        else if (countDown == 60)
+            timer.innerHTML = '1min';
+        else 
+            timer.innerHTML = countDown + 's';
+    }, 1000);
+    timeoutId = setTimeout(() => endGame(0), countDown * 1000);
 }
 
 function load(dificuldade) 
 {
     const duplicateCharacters = [...characters, ...characters];
-    first = second = won = '';
-    rec = pares = 0;
+    first = second = rec = '';
+    pares = 0;
 
     duplicateCharacters.forEach(character => {
         const carta = criaCarta(character);
@@ -182,8 +198,6 @@ function load(dificuldade)
 
     if (dificuldade == 0)
         timer.innerHTML = "Sem tempo";
-    else {
-        timer.innerHTML = countDown[dificuldade - 1] + 's';
-        time(countDown[dificuldade - 1]);
-    }
+    else 
+        timeSet(countDown[dificuldade - 1]);
 }
