@@ -36,6 +36,10 @@ header li {
     text-align: center;
 }
 
+header li, header li * {
+    cursor: url(../../img/maozinha.gif), auto;
+}
+
 header li * {
     height: 3.26vw;
     box-sizing: border-box;
