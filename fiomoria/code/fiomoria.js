@@ -24,10 +24,11 @@ const countDown = [
 ];
 let rec;
 let pares;
-let jogo;
 let game = 0;
 let first;
 let second;
+let timeoutId;
+let intervalId;
 
 function novoElemento (tag, classe) 
 {
@@ -55,17 +56,23 @@ function criaCarta(character)
 }
 
 function timeSet(countDown) {
-    setTimeout(() => timeSet(countDown), 1000);
+    intervalId = setInterval(() => {
+        if (countDown == 0) {
+            clearInterval(intervalId);
+            return;
+        }
 
-    if (countDown >= 0) {
-        timer.innerHTML = countDown + 's';
         countDown--;
-    }
+        rec++;
+
+        timer.innerHTML = countDown + 's';
+    }, 1000);
 }
 
 function endGame(won) {
     if (won) {
-        clearTimeout(() => endGame(0));
+        clearTimeout(timeoutId);
+        clearInterval(intervalId);
 
         $.ajax({
             url: 'code/record.php',
@@ -75,17 +82,15 @@ function endGame(won) {
             }
         }).done(result => {
             if (result)
-                window.alert('Parabéns, novo record!');
+                timer.innerHTML = 'Parabéns, novo record';
             else
-                window.alert('Parabéns você venceu');
+                timer.innerHTML = 'Parabéns, você Ganhou';
         });
     }
     else {
         cartas = document.querySelectorAll('.fiomoria-carta:not(.flip)');
         cartas.forEach(carta => carta.classList.add('flip'));
     }
-
-    jogo = 0;
 }
 
 function close() 
@@ -103,7 +108,7 @@ function close()
     first = '';
     second = '';
 
-    if(pares == 12)
+    if(pares == 12) 
         endGame(1);
 }
 
@@ -156,16 +161,16 @@ function embaralhar()
 }
 
 function time(countDown) {
-    setTimeout(() => endGame(0), countDown * 1000);
+    timeoutId = setTimeout(() => endGame(0), countDown * 1000);
+
     timeSet(countDown);
 }
 
 function load(dificuldade) 
 {
     const duplicateCharacters = [...characters, ...characters];
-    first = second = '';
+    first = second = won = '';
     rec = pares = 0;
-    jogo = 1;
 
     duplicateCharacters.forEach(character => {
         const carta = criaCarta(character);

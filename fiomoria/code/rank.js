@@ -40,6 +40,8 @@ play.addEventListener('click', () => {
             carrega_rank();
         }
         else {
+            clearTimeout(timeoutId);
+            clearInterval(intervalId);
             pageOut();
             setTimeout(() => {
                 load(select.value);
