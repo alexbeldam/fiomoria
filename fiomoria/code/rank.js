@@ -1,3 +1,4 @@
+const rank = document.querySelector('.rank');
 const avatares = [
     'img/avatar1.jpg',
     'img/avatar2.jpg',
@@ -7,7 +8,6 @@ const avatares = [
 
 function carrega_rank() {
     const avatars = document.querySelectorAll('ul img');
-    const rank = document.querySelector('.rank');
 
     avatars.forEach(avtr => {
         let avt = avtr.getAttribute('data-avatar');
@@ -18,6 +18,14 @@ function carrega_rank() {
     rank.classList.remove('sumiu');
 }
 
+function pageOut() {
+    rank.classList.add('sumiu');
+
+    const cartas = document.querySelectorAll(".fiomoria-carta");
+
+    cartas.forEach(carta => board.removeChild(carta));
+}
+
 play.addEventListener('click', () => {
         if (select.value === '') {
             select.classList.add('tryagain');
@@ -26,8 +34,16 @@ play.addEventListener('click', () => {
     
             return;
         }
-        else {
+        else if (!game) {
+            game = 1;
             load(select.value);
             carrega_rank();
+        }
+        else {
+            pageOut();
+            setTimeout(() => {
+                load(select.value);
+                carrega_rank();
+            }, 100);
         }
 });

@@ -25,8 +25,9 @@ const countDown = [
 let rec;
 let pares;
 let jogo;
-let first = '';
-let second = '';
+let game = 0;
+let first;
+let second;
 
 function novoElemento (tag, classe) 
 {
@@ -64,6 +65,8 @@ function timeSet(countDown) {
 
 function endGame(won) {
     if (won) {
+        clearTimeout(() => endGame(0));
+
         $.ajax({
             url: 'code/record.php',
             method: 'POST',
@@ -78,7 +81,7 @@ function endGame(won) {
         });
     }
     else {
-        cartas = document.querySelectorAll('.fiomoria-carta');
+        cartas = document.querySelectorAll('.fiomoria-carta:not(.flip)');
         cartas.forEach(carta => carta.classList.add('flip'));
     }
 
@@ -160,6 +163,7 @@ function time(countDown) {
 function load(dificuldade) 
 {
     const duplicateCharacters = [...characters, ...characters];
+    first = second = '';
     rec = pares = 0;
     jogo = 1;
 
