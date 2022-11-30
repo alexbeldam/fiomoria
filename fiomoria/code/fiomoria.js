@@ -48,11 +48,11 @@ function criaCarta(character)
 
     carta.appendChild(frente);
     carta.appendChild(verso);
-    carta.setAttribute('data-character', character)
+    carta.setAttribute('data-character', character);
 
     board.appendChild(carta);
 
-    return carta
+    return carta;
 }
 
 function endGame(won) {
@@ -112,7 +112,7 @@ function unflip()
 
         first = '';
         second = '';
-    }, 1000)
+    }, 1000);
 }
 
 function checar() 
