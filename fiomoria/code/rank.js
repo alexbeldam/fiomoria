@@ -51,4 +51,4 @@ play.addEventListener('click', () => {
 select.addEventListener('click', () => {
     if (select.className.includes('tryagain'))
         select.classList.remove('tryagain');
-})
+});
