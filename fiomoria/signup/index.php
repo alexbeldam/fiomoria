@@ -13,9 +13,9 @@
 <body>
     <section id="signup">
         <div>
-            <div>
-                <img src="../img/icon.png" id="logo">
-            </div>
+            <figure>
+                <img src="../img/logo.png" id="logo">
+            </figure>
 
             <form method="post" action="">
                 <input type="text" name="user" placeholder="Nome de Usuário" minlength="5" maxlength="32" required autofocus>
