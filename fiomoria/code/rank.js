@@ -29,9 +29,6 @@ function pageOut() {
 play.addEventListener('click', () => {
         if (select.value === '') {
             select.classList.add('tryagain');
-    
-            setTimeout(() => select.classList.remove('tryagain'), 1500);
-    
             return;
         }
         else if (!game) {
@@ -50,3 +47,8 @@ play.addEventListener('click', () => {
             }, 100);
         }
 });
+
+select.addEventListener('click', () => {
+    if (select.className.includes('tryagain'))
+        select.classList.remove('tryagain');
+})

@@ -153,10 +153,11 @@ function embaralhar()
 }
 
 function timeSet(countDown) {
+    let segundos;
     rec = 0;
 
     if (countDown > 60) {
-        let segundos = countDown - 60;
+        segundos = countDown - 60;
 
         timer.innerHTML = '1min ' + segundos + 's';
     }
@@ -170,7 +171,7 @@ function timeSet(countDown) {
         rec++;
         
         if (countDown > 60) {
-            let segundos = countDown - 60;
+            segundos = countDown - 60;
 
             timer.innerHTML = '1min ' + segundos + 's';
         }
