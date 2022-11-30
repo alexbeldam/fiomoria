@@ -36,6 +36,7 @@ play.addEventListener('click', () => {
         }
         else if (!game) {
             game = 1;
+            play.innerHTML = 'Novo Jogo';
             load(select.value);
             carrega_rank();
         }
