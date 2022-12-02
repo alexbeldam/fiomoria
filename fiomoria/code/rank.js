@@ -1,10 +1,4 @@
 const rank = document.querySelector('.rank');
-const avatares = [
-    'img/avatar1.jpg',
-    'img/avatar2.jpg',
-    'img/avatar3.jpg',
-    'img/avatar4.jpg',
-];
 
 $(document).ready(() => setInterval(() => {
     $.get("code/rank.php", data => {
