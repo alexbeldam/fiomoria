@@ -7,41 +7,80 @@ $rank;
 $sql_code = "SELECT * FROM usuarios WHERE record != 'NULL' ORDER BY record";
 $sql_query = $mysqli->query($sql_code);
 
-if ($sql_query->num_rows === 0)
-{
-    $rank['users'] = '';
-    $rank['avatars'] = '';
-    $rank['records'] = '';
-}
-else if ($sql_query->num_rows === 1) {
-    $player = $sql_query->fetch_assoc();
+$player1 = $sql_query->fetch_assoc();
+$player2 = $sql_query->fetch_assoc();
+$player3 = $sql_query->fetch_assoc();
 
-    $rank['users'] = $player['user'];
-    $rank['avatars'] = $player['avatar'];
-    $rank['records'] = $player['record'];
-}
-else if ($sql_query->num_rows === 2) {
-    $player1 = $sql_query->fetch_assoc();
-    $player2 = $sql_query->fetch_assoc();
+$users = array($player1['user'], $player2['user'], $player3['user']);
+$avatars = array($player1['avatar'], $player2['avatar'], $player3['avatar']);
+$records = array($player1['record'], $player2['record'], $player3['record']);
 
-    $users = array($player1['user'], $player2['user']);
-    $avatars = array($player1['avatar'], $player2['avatar']);
-    $records = array($player1['record'], $player2['record']);
+$rank['users'] = $users;
+$rank['avatars'] = $avatars;
+$rank['records'] = $records;
 
-    $rank['users'] = $users;
-    $rank['avatars'] = $avatars;
-    $rank['records'] = $records;
-}
-else {
-    $player1 = $sql_query->fetch_assoc();
-    $player2 = $sql_query->fetch_assoc();
-    $player3 = $sql_query->fetch_assoc();
+?>
 
-    $users = array($player1['user'], $player2['user'], $player3['user']);
-    $avatars = array($player1['avatar'], $player2['avatar'], $player3['avatar']);
-    $records = array($player1['record'], $player2['record'], $player3['record']);
-
-    $rank['users'] = $users;
-    $rank['avatars'] = $avatars;
-    $rank['records'] = $records;
-}
+<li>
+    <ul>
+        <li>
+            <img src="img/avatar<?php echo ($rank['avatars'][0] - 1) ?>">
+        </li>
+        <li class="center">
+            <?php echo $rank['users'][0] ?>
+        </li>
+        <li class="center" id="top1">
+            record:
+            <?php
+                if ($rank['records'][0] == 60)
+                    echo '1min';
+                else if ($rank['records'][0] > 60)
+                    echo '1min ' . ($rank['records'][0] - 60) . 's';
+                else
+                    echo $rank['records'][0] . 's';
+            ?>
+        </li>
+    </ul>
+</li>
+<li>
+    <ul>
+        <li>
+            <img src="img/avatar<?php echo ($rank['avatars'][1] - 1) ?>">
+        </li>
+        <li class="center">
+            <?php echo $rank['users'][1] ?>
+        </li>
+        <li class="center" id="top2">
+            record:
+            <?php
+            if ($rank['records'][1] == 60)
+                echo '1min';
+            else if ($rank['records'][1] > 60)
+                echo '1min ' . ($rank['records'][1] - 60) . 's';
+            else
+                echo $rank['records'][1] . 's';
+            ?>
+        </li>
+    </ul>
+</li>
+<li>
+    <ul>
+        <li>
+            <img src="img/avatar<?php echo ($rank['avatars'][2] - 1) ?>">
+        </li>
+        <li class="center" id="top3">
+            <?php echo $rank['users'][2] ?>
+        </li>
+        <li class="center">
+            record:
+            <?php
+                if ($rank['records'][2] == 60)
+                    echo '1min';
+                else if ($rank['records'][2] > 60)
+                    echo '1min ' . ($rank['records'][2] - 60) . 's';
+                else
+                    echo $rank['records'][2] . 's';
+            ?>
+        </li>
+    </ul>
+</li>

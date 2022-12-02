@@ -6,15 +6,14 @@ const avatares = [
     'img/avatar4.jpg',
 ];
 
-function carrega_rank() {
-    const avatars = document.querySelectorAll('ul img');
-
-    avatars.forEach(avtr => {
-        let avt = avtr.getAttribute('data-avatar');
-
-        avtr.src = avatares[avt];
+$(document).ready(() => setInterval(() => {
+    $.get("code/rank.php", data => {
+        $('#top').html(data).fadeIn("slow");
     });
 
+}, 1000));
+
+function carrega_rank() {
     rank.classList.remove('sumiu');
 }
 

@@ -1,7 +1,6 @@
 <?php
 
 include('code/protect.php');
-include('code/rank.php');
 
 ?>
 
@@ -66,71 +65,7 @@ include('code/rank.php');
             ?>
         </p>
         <h1>Top 3 users:</h1>
-        <ul>
-            <li>
-                <ul>
-                    <li>
-                        <img data-avatar="<?php echo $rank['avatars'][0] ?>">
-                    </li>
-                    <li class="center">
-                        <?php echo $rank['users'][0] ?>
-                    </li>
-                    <li class="center" id="top1">
-                        record:
-                        <?php 
-                        if ($rank['records'][0] == 60)
-                            echo '1min';
-                        else if ($rank['records'][0] > 60) 
-                            echo '1min ' . ($rank['records'][0] - 60) . 's';
-                        else
-                            echo $rank['records'][0] .'s';
-                        ?>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                    <li>
-                        <img data-avatar="<?php echo $rank['avatars'][1] ?>">
-                    </li>
-                    <li class="center">
-                        <?php echo $rank['users'][1] ?>
-                    </li>
-                    <li class="center" id="top2">
-                        record:
-                        <?php 
-                        if ($rank['records'][1] == 60)
-                            echo '1min';
-                        else if ($rank['records'][1] > 60) 
-                            echo '1min ' . ($rank['records'][1] - 60) . 's';
-                        else
-                            echo $rank['records'][1] .'s';
-                        ?>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <ul>
-                    <li>
-                        <img data-avatar="<?php echo $rank['avatars'][2] ?>">
-                    </li>
-                    <li class="center" id="top3">
-                        <?php echo $rank['users'][2] ?>
-                    </li>
-                    <li class="center">
-                        record:
-                        <?php 
-                        if ($rank['records'][2] == 60)
-                            echo '1min';
-                        else if ($rank['records'][2] > 60) 
-                            echo '1min ' . ($rank['records'][2] - 60) . 's';
-                        else
-                            echo $rank['records'][2] .'s';
-                        ?>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <ul id="top"></ul>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
