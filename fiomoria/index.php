@@ -52,10 +52,18 @@ include('code/rank.php');
         <p class="time"></p>
         <h1>Seu record:</h1>
         <p class="yrecord">
-            <?php if (is_null($_SESSION['record']))
-            echo 'nenhum';
-        else
-            echo $_SESSION['record'] . 's' ?>
+            <?php 
+            if (is_null($_SESSION['record']))
+                echo 'nenhum';
+            else {
+                if ($_SESSION['record'] == 60)
+                    echo '1min';
+                else if ($_SESSION['record'] > 60) 
+                    echo '1min ' . ($_SESSION['record'] - 60) . 's';
+                else
+                    echo $_SESSION['record'] .'s';
+            }
+            ?>
         </p>
         <h1>Top 3 users:</h1>
         <ul>
@@ -67,9 +75,16 @@ include('code/rank.php');
                     <li class="center">
                         <?php echo $rank['users'][0] ?>
                     </li>
-                    <li class="center">
+                    <li class="center" id="top1">
                         record:
-                        <?php echo $rank['records'][0] ?>s
+                        <?php 
+                        if ($rank['records'][0] == 60)
+                            echo '1min';
+                        else if ($rank['records'][0] > 60) 
+                            echo '1min ' . ($rank['records'][0] - 60) . 's';
+                        else
+                            echo $rank['records'][0] .'s';
+                        ?>
                     </li>
                 </ul>
             </li>
@@ -81,9 +96,16 @@ include('code/rank.php');
                     <li class="center">
                         <?php echo $rank['users'][1] ?>
                     </li>
-                    <li class="center">
+                    <li class="center" id="top2">
                         record:
-                        <?php echo $rank['records'][1] ?>s
+                        <?php 
+                        if ($rank['records'][1] == 60)
+                            echo '1min';
+                        else if ($rank['records'][1] > 60) 
+                            echo '1min ' . ($rank['records'][1] - 60) . 's';
+                        else
+                            echo $rank['records'][1] .'s';
+                        ?>
                     </li>
                 </ul>
             </li>
@@ -92,12 +114,19 @@ include('code/rank.php');
                     <li>
                         <img data-avatar="<?php echo $rank['avatars'][2] ?>">
                     </li>
-                    <li class="center">
+                    <li class="center" id="top3">
                         <?php echo $rank['users'][2] ?>
                     </li>
                     <li class="center">
                         record:
-                        <?php echo $rank['records'][2] ?>s
+                        <?php 
+                        if ($rank['records'][2] == 60)
+                            echo '1min';
+                        else if ($rank['records'][2] > 60) 
+                            echo '1min ' . ($rank['records'][2] - 60) . 's';
+                        else
+                            echo $rank['records'][2] .'s';
+                        ?>
                     </li>
                 </ul>
             </li>

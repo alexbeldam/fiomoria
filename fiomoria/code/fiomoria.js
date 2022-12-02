@@ -71,8 +71,21 @@ function endGame(won) {
                     record: rec
                 }
             }).done(result => {
-                if (result)
+                if (result != 0) {
+                    const recordEl = document.querySelector('.yrecord');
+
+                    if (result == 60)
+                        recordEl.innerHTML = '1min';
+                    else if (result > 60) {
+                        const segundos = result - 60;
+
+                        recordEl.innerHTML = '1min ' + segundos + 's';
+                    }
+                    else 
+                        recordEl.innerHTML = result + 's';
+
                     timer.innerHTML = 'Parabéns, novo record';
+                }
                 else
                     timer.innerHTML = 'Parabéns, você Ganhou';
             });

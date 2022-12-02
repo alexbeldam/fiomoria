@@ -4,7 +4,7 @@ const avatares = [
     'img/avatar2.jpg',
     'img/avatar3.jpg',
     'img/avatar4.jpg',
-]
+];
 
 function carrega_rank() {
     const avatars = document.querySelectorAll('ul img');
