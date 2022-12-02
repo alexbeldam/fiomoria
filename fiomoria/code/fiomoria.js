@@ -87,7 +87,7 @@ function endGame(won) {
                     timer.innerHTML = 'Parabéns, novo record';
                 }
                 else
-                    timer.innerHTML = 'Parabéns, você Ganhou';
+                    timer.innerHTML = 'Parabéns, você ganhou';
             });
     }
     else {
