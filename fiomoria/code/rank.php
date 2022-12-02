@@ -66,7 +66,7 @@ $rank['records'] = $records;
 <li>
     <ul>
         <li>
-            <img src="img/avatar<?php ($rank['avatars'][2] + 1) ?>.jpg">
+            <img src="img/avatar<?php echo ($rank['avatars'][2] + 1) ?>.jpg">
         </li>
         <li class="center" id="top3">
             <?php echo $rank['users'][2] ?>
