@@ -62,7 +62,7 @@ function endGame(won) {
         clearTimeout(timeoutId);
 
         if (rec === '') 
-            timer.innerHTML = 'Parabéns, você Ganhou';
+            timer.innerHTML = 'parabéns, você Ganhou';
         else
             $.ajax({
                 url: 'code/record.php',
@@ -211,7 +211,7 @@ function load(dificuldade)
     embaralhar();
 
     if (dificuldade == 0)
-        timer.innerHTML = "Sem tempo";
+        timer.innerHTML = "sem tempo";
     else 
         timeSet(countDown[dificuldade - 1]);
 }
