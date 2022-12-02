@@ -24,22 +24,22 @@
                     Seu Avatar:
                     <ul class="avatars">
                         <li class="avatar fiona">
-                            <input type="radio" name="avatars" value="1" id="fiona" require>
+                            <input type="radio" name="avatars" value="0" id="fiona" require>
                             <label for="fiona">Fiona</label>
                         </li>
 
                         <li class="avatar shrek">
-                            <input type="radio" name="avatars" value="2" id="shrek" required>
+                            <input type="radio" name="avatars" value="1" id="shrek" required>
                             <label for="shrek">Shrek</label>
                         </li>
 
                         <li class="avatar burro">
-                            <input type="radio" name="avatars" value="3" id="burro" required>
+                            <input type="radio" name="avatars" value="2" id="burro" required>
                             <label for="burro">Burro</label>
                         </li>
 
                         <li class="avatar gato">
-                            <input type="radio" name="avatars" value="4" id="gato" required>
+                            <input type="radio" name="avatars" value="3" id="gato" required>
                             <label for="gato">Gato de Botas</label>
                         </li>
                     </ul>

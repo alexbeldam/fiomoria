@@ -24,7 +24,7 @@ $rank['records'] = $records;
 <li>
     <ul>
         <li>
-            <img src="img/avatar<?php echo $rank['avatars'][0] ?>">
+            <img src="img/avatar<?php echo ($rank['avatars'][0] + 1) ?>.jpg">
         </li>
         <li class="center">
             <?php echo $rank['users'][0] ?>
@@ -45,7 +45,7 @@ $rank['records'] = $records;
 <li>
     <ul>
         <li>
-            <img src="img/avatar<?php echo $rank['avatars'][1]  ?>">
+            <img src="img/avatar<?php echo ($rank['avatars'][1] + 1) ?>.jpg">
         </li>
         <li class="center">
             <?php echo $rank['users'][1] ?>
@@ -66,7 +66,7 @@ $rank['records'] = $records;
 <li>
     <ul>
         <li>
-            <img src="img/avatar<?php echo $rank['avatars'][2]  ?>">
+            <img src="img/avatar<?php ($rank['avatars'][2] + 1) ?>.jpg">
         </li>
         <li class="center" id="top3">
             <?php echo $rank['users'][2] ?>
