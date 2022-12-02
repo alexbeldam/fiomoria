@@ -84,17 +84,17 @@ function endGame(won) {
                     else 
                         recordEl.innerHTML = result + 's';
 
-                    timer.innerHTML = 'Parabéns, novo record';
+                    timer.innerHTML = 'parabéns, novo record';
                 }
                 else
-                    timer.innerHTML = 'Parabéns, você ganhou';
+                    timer.innerHTML = 'parabéns, você ganhou';
             });
     }
     else {
         const cartas = document.querySelectorAll('.fiomoria-carta:not(.flip)');
         cartas.forEach(carta => carta.classList.add('flip'));
 
-        timer.innerHTML = 'Você perdeu';
+        timer.innerHTML = 'você perdeu';
     }
 }
 
