@@ -62,7 +62,7 @@ function endGame(won) {
         clearTimeout(timeoutId);
 
         if (rec === '') 
-            timer.innerHTML = 'parabéns, você Ganhou';
+            timer.innerHTML = 'parabéns, você ganhou!';
         else
             $.ajax({
                 url: 'code/record.php',
@@ -84,15 +84,18 @@ function endGame(won) {
                     else 
                         recordEl.innerHTML = result + 's';
 
-                    timer.innerHTML = 'parabéns, novo record';
+                    timer.innerHTML = 'parabéns, novo record!';
                 }
                 else
-                    timer.innerHTML = 'parabéns, você ganhou';
+                    timer.innerHTML = 'parabéns, você ganhou!';
             });
     }
     else {
-        const cartas = document.querySelectorAll('.fiomoria-carta:not(.flip)');
-        cartas.forEach(carta => carta.classList.add('flip'));
+        const cartas = document.querySelectorAll('.fiomoria-carta:not(.disabled)');
+        cartas.forEach(carta => {
+            if (!carta.classList.contains('flip'))
+                carta.classList.add('flip');
+        });
 
         timer.innerHTML = 'você perdeu';
     }
@@ -120,11 +123,14 @@ function close()
 function unflip() 
 {
     setTimeout(() => {
-        first.classList.remove('flip');
-        second.classList.remove('flip');
-
         first = '';
         second = '';
+
+        if (timer.innerHTML === '0s')
+            return;
+
+        first.classList.remove('flip');
+        second.classList.remove('flip');
     }, 1000);
 }
 
