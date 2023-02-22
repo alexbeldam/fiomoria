@@ -92,7 +92,10 @@ function endGame(won) {
     }
     else {
         const cartas = document.querySelectorAll('.fiomoria-carta:not(.disabled)');
-        cartas.forEach(carta => carta.classList.add('flip'));
+        cartas.forEach(carta => {
+            carta.classList.add('flip')
+            carta.removeEventListener('click', e => flip(e));
+        });
 
         timer.innerHTML = 'você perdeu';
     }
@@ -120,14 +123,14 @@ function close()
 function unflip() 
 {
     setTimeout(() => {
-        first = '';
-        second = '';
-
-        if (timer.innerHTML === '0s')
+        if (timer.innerHTML === 'você perdeu')
             return;
-
+            
         first.classList.remove('flip');
         second.classList.remove('flip');
+            
+        first = '';
+        second = '';
     }, 1000);
 }
 
