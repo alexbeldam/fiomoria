@@ -1,4 +1,4 @@
-const select = document.querySelector('select[name="game-mode"');
+const select = document.querySelector('select[name="game-mode"]');
 const play = document.querySelector('#joga');
 const board = document.querySelector('.fiomoria-game');
 const characters = [
@@ -92,10 +92,7 @@ function endGame(won) {
     }
     else {
         const cartas = document.querySelectorAll('.fiomoria-carta:not(.disabled)');
-        cartas.forEach(carta => {
-            if (!carta.classList.contains('flip'))
-                carta.classList.add('flip');
-        });
+        cartas.forEach(carta => carta.classList.add('flip'));
 
         timer.innerHTML = 'você perdeu';
     }
