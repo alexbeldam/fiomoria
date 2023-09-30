@@ -1,4 +1,4 @@
-const user = document.querySelector('input[name="user"]');
+const user = document.querySelector('input[name="username"]');
 
 user.classList.add('tryagain');
 

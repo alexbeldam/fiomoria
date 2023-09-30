@@ -1,13 +1,12 @@
 const firstButton = document.querySelector('h1');
 const buttons = document.querySelectorAll('h2');
-const links = ['fiomoria/', 'https://shrek.fandom.com/wiki/WikiShrek', 'credits/']; 
+const links = ['game/', 'credits/']; 
 
 function buttonChange() {
     firstButton.classList.add('kd');
     firstButton.style.display = 'none';
     
-    for (let button of buttons)
-    {
+    for (const button of buttons) {
         button.style.display = 'block';
         button.classList.remove('kd');
     }
@@ -15,7 +14,7 @@ function buttonChange() {
 
 firstButton.addEventListener('click', buttonChange);
 
-for (let i = 0; i < 3; i++)
+for (let i = 0; i < 2; i++)
     buttons[i].addEventListener('click', () => location.href = links[i]);
 
 setTimeout(buttonChange, 10000);

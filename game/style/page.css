@@ -68,7 +68,7 @@ header li p {
     outline: 1px red solid;
 }
 
-.rank {
+#rank {
     position: absolute;
     left: 1vw;
     top: 4.26vw;
@@ -81,11 +81,11 @@ header li p {
     width: 23%;
 }
 
-.rank *:not(li ul li img) {
+#rank *:not(li ul li img) {
     padding-bottom: 1vw;
 }
 
-.rank ul {
+#rank ul {
     list-style: none;
 }
 
@@ -110,7 +110,7 @@ li ul li img {
 
 }
 
-.rank p {
+#rank p {
     font-weight: bold;
     font-size: 1vw;
 }
