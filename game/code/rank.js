@@ -37,7 +37,7 @@ playBtn.addEventListener('click', () => {
         select.classList.add('tryagain');
         return;
     } 
-    else if (playBtn.innerHTML == 'Jogar') {
+    if (playBtn.innerHTML == 'Jogar') {
         playBtn.innerHTML = 'Novo Jogo';
         load(select.value);
     }
