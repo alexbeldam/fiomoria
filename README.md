@@ -107,8 +107,6 @@ Um grande obrigado a todas as pessoas que contribuíram para este projeto.
   </tr>
 </table>
 
----
-
 <h2 id="honra">⭐ Menção Honrosa</h2>
 
 E um grande obrigado ao professor que nos ensinou tudo e mais um pouco!
