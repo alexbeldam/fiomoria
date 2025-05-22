@@ -29,7 +29,7 @@ Infelizmente o site **não está hospedado**, então só dá pra rodar localment
 
 ---
 
-<h2 id="telas">🖥️ Telas</h2>
+<h2 id="telas">🖼️ Telas</h2>
 
 ### 🧅 Tela de Título
 
@@ -121,3 +121,8 @@ E um grande obrigado ao professor que nos ensinou tudo e mais um pouco!
     </td>
   </tr>
 </table>
+
+<h2 id="tp1">🖥️ Mitonomia</h2>
+
+O trabalho feito antes deste pode ser encontrado nesse respositório:<br>
+👉 **[https://github.com/alexbeldam/mitonomy](https://github.com/alexbeldam/mitonomy)**
